@@ -1,4 +1,3 @@
-import imp
 from file import File
 from student import Student
 
@@ -9,4 +8,4 @@ dataStundent = file.process_file()
 
 student = Student(dataStundent)
 
-student.find_winners(2)
+student.find_winners(3)

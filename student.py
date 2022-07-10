@@ -4,9 +4,7 @@ class Student():
         self.list_points = list_points
 
     def find_winners(self, positions: int):
-        print(self.list_points)
-        print(positions)
-        print((self.list_points[0][0]))
+        print(self.list_points[0:positions])
 
     def find_users_by_percent(self, percent: int):
         pass
