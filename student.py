@@ -11,4 +11,4 @@ class Student():
         for student in self.list_student:
             if student['acuracy'] >= percent:
                 student_filter_by_percent.append(student)
-        print(student_filter_by_percent)
+        return(student_filter_by_percent)

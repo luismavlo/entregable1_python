@@ -11,4 +11,4 @@ dataStundent = file.process_file()
 student = Student(dataStundent)
 
 # student.find_winners(3)
-student.find_users_by_percent(70)
+print(student.find_users_by_percent(70))
