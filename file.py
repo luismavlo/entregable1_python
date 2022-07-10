@@ -27,7 +27,7 @@ class File():
                     data.append(obj)
         return(data)
 
-    def process_file(self):
+    def process_data_file(self):
         dataStudents = self.open_files()
         data_result = []
         result_score = {}
@@ -57,13 +57,18 @@ class File():
                     data = {"name": i[0], "score": j[1], "acuracy": i[1]}
                     data_result.append(data)
 
-        for student in data_result:
-            if student['name'] == 'kevin salvador':
-                student['score'] = int(student['score']) + 8000
+        total_points = self.add_points_to_students(
+            data_result, [{'name': 'kevin salvador', 'score': 8000}, {'name': 'diego angeles', 'score': 2000}])
 
-            if student['name'] == 'diego angeles':
-                student['score'] = int(student['score']) + 2000
+        return total_points
+
+    def add_points_to_students(self, data_result: list, extra_studet_points: list):
+
+        for student in data_result:
+            for extra_point in extra_studet_points:
+                if student['name'] == extra_point['name']:
+                    student['score'] = int(
+                        student['score']) + int(extra_point['score'])
 
         data_result.sort(key=lambda d: d['score'], reverse=True)
-
         return data_result

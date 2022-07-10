@@ -5,7 +5,7 @@ from student import Student
 file = File()
 
 
-dataStundent = file.process_file()
+dataStundent = file.process_data_file()
 
 
 student = Student(dataStundent)
