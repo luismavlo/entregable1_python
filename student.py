@@ -7,6 +7,7 @@ class Student():
         return self.list_student[0:positions]
 
     def find_users_by_percent(self, percent: int):
+
         student_filter_by_percent = []
         for student in self.list_student:
             if student['acuracy'] >= percent:

@@ -1,13 +1,22 @@
 import csv
 import os
+from tkinter.tix import Tree
 
 
 class File():
+
+    def __init__(self) -> None:
+        self.length_file = 0
 
     def open_files(self):
         fileQuiz = os.listdir()
 
         files = [file for file in fileQuiz if file.endswith("csv")]
+
+        try:
+            self.length_file = len(files)
+        except Exception as e:
+            print('no se le puede sacar logitud a null | 0')
 
         data = []
 
@@ -42,11 +51,17 @@ class File():
                 result_score[completed_name] = int(i["score"])
 
             if completed_name in result_acuracy.keys():
-                result_acuracy[completed_name] += int(
-                    (i["accuracy"]).split()[0]) // 4
+                try:
+                    result_acuracy[completed_name] += int(
+                        (i["accuracy"]).split()[0]) // self.length_file
+                except ZeroDivisionError:
+                    print('No se puede dividir por cero')
             else:
-                result_acuracy[completed_name] = int(
-                    (i["accuracy"]).split()[0]) // 4
+                try:
+                    result_acuracy[completed_name] = int(
+                        (i["accuracy"]).split()[0]) // self.length_file
+                except ZeroDivisionError:
+                    print('No se puede dividir por cero')
 
         for i in result_acuracy.items():
             # print(i) (k,v)
@@ -62,10 +77,10 @@ class File():
 
         return total_points
 
-    def add_points_to_students(self, data_result: list, extra_studet_points: list):
+    def add_points_to_students(self, data_result: list, extra_student_points: list):
 
         for student in data_result:
-            for extra_point in extra_studet_points:
+            for extra_point in extra_student_points:
                 if student['name'] == extra_point['name']:
                     student['score'] = int(
                         student['score']) + int(extra_point['score'])
