@@ -9,7 +9,7 @@ class File():
         self.length_file = 0
 
     def open_files(self):
-    """
+        """
     La función open_files fusiona varios archivos .csv
     los importa desde la biblioteca.
     Configura las rutas de los archivos.
@@ -45,7 +45,7 @@ class File():
         return(data)
 
     def process_data_file(self):
-    """
+        """
     La función process_data_file recibe los datos de los estudiantes, nombre completo,
     score y acuracy.
     Divide los datos 
@@ -94,7 +94,7 @@ class File():
         return total_points
 
     def add_points_to_students(self, data_result: list, extra_student_points: list):
-    """
+        """
     La función add_points_to_students recibe la lista de estudiantes extra.
     Diccionario:
     name
