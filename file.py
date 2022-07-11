@@ -9,6 +9,14 @@ class File():
         self.length_file = 0
 
     def open_files(self):
+    """
+    La función open_files fusiona varios archivos .csv
+    los importa desde la biblioteca.
+    Configura las rutas de los archivos.
+
+    >>> Luego, usando el método csv.DictReader() lee todos los archivos .csv
+ 
+    """
         fileQuiz = os.listdir()
 
         files = [file for file in fileQuiz if file.endswith("csv")]
