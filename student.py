@@ -5,22 +5,31 @@ class Student():
 
     def find_winners(self, positions: int):
         """
-    La función find_winners hace un llamado a los 3 primeros lugares en el score.
-    ordenado de mayor a menor por el index.
-    
-    """
+        The find_winners function calls the top X places in the score.
+        sorted from highest to lowest by index.
+
+        >>> receives a number that is the amount of the best students
+
+        >>> return  [{'name': 'xxx', 'score': xxx, 'acuracy': xx}, ...]
+        """
+
         return self.list_student[0:positions]
 
     def find_users_by_percent(self, percent: int):
         """
-    La función find_users_by_percent hace una consulta del score 
-    y el acuracy a la lista de estudiantes
-    For:
-    Si el student['acuracy'] es mayor o igual al porcentaje 
-    se aplica método append
-    devolviendo una nueva lista en el main.py 
-    
-    """
+        The find_users_by_percent function queries the score
+        and the acuracy to the student list
+        For:
+        If the student['acuracy'] is greater than or equal to the percentage
+        append method is applied
+        returning a new list in main.py
+
+        >>> receives the percent for filter 
+
+        >>> return [{'name': 'diego angeles', 'score': 16640, 'acuracy': 95}, .....]
+
+
+        """
         student_filter_by_percent = []
         for student in self.list_student:
             if student['acuracy'] >= percent:
