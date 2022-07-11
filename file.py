@@ -78,7 +78,17 @@ class File():
         return total_points
 
     def add_points_to_students(self, data_result: list, extra_student_points: list):
-
+    """
+    La función add_points_to_students recibe la lista de estudiantes extra.
+    Diccionario:
+    name
+    score
+    Se suma el score, si los nombres son iguales
+   
+    >>> suma(student['score'] + extra-point['score'])
+    >>> se ordenan los resultados con el método sort
+    
+    """
         for student in data_result:
             for extra_point in extra_student_points:
                 if student['name'] == extra_point['name']:
