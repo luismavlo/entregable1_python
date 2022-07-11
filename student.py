@@ -27,8 +27,6 @@ class Student():
         >>> receives the percent for filter 
 
         >>> return [{'name': 'diego angeles', 'score': 16640, 'acuracy': 95}, .....]
-
-
         """
         student_filter_by_percent = []
         for student in self.list_student:

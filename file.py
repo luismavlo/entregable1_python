@@ -1,6 +1,5 @@
 import csv
 import os
-from tkinter.tix import Tree
 
 
 class File():
@@ -35,6 +34,7 @@ class File():
         for file in files:
             with open(file, encoding="utf-8") as csv_file:
                 file_to_process = csv.DictReader(csv_file)
+
                 for i in file_to_process:
                     obj = {
                         "rank": i["Rank"],
@@ -97,7 +97,7 @@ class File():
                     data_result.append(data)
 
         total_points = self.add_points_to_students(
-            data_result, [{'name': 'kevin salvador', 'score': 8000}, {'name': 'diego angeles', 'score': 2000}])
+            data_result, [{'name': 'kevin salvador casas', 'score': 8000}, {'name': 'diego angeles', 'score': 2000}])
 
         return total_points
 
