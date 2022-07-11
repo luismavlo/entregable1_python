@@ -94,7 +94,7 @@ class File():
         return total_points
 
     def add_points_to_students(self, data_result: list, extra_student_points: list):
-           """
+    """
     La función add_points_to_students recibe la lista de estudiantes extra.
     Diccionario:
     name
