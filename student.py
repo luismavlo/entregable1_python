@@ -7,7 +7,8 @@ class Student():
            """
     La función find_winners hace un llamado a los 3 primeros lugares en el score.
     ordenado de mayor a menor por el index.
-"""
+
+    """
         return self.list_student[0:positions]
 
     def find_users_by_percent(self, percent: int):
