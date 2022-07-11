@@ -37,6 +37,14 @@ class File():
         return(data)
 
     def process_data_file(self):
+    """
+    La función process_data_file recibe los datos de los estudiantes, nombre completo,
+    score y acuracy.
+    Divide los datos 
+
+    >>> retorna el total de puntos acumulados por cada estudiante.
+ 
+    """
         dataStudents = self.open_files()
         data_result = []
         result_score = {}
