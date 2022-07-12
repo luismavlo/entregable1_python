@@ -9,20 +9,20 @@ class File():
 
     def open_files(self):
         """
-    The open_files function merges multiple .csv files
-    imports them from the library.
-    Set file paths.
+            The open_files function merges multiple .csv files
+            imports them from the library.
+            Set file paths.
 
-    >>> 
-    Then using the csv.DictReader() method read all the .csv files
+            >>> 
+            Then using the csv.DictReader() method read all the .csv files
 
-    >>> return [{'rank': '1', 'firstName': 'xxx', 'lastName': 'xxx', 'accuracy': 'x %', 'score': 'xxx'}, ....]
+            >>> return [{'rank': '1', 'firstName': 'xxx', 'lastName': 'xxx', 'accuracy': 'x %', 'score': 'xxx'}, ....]
 
-    the returned data is not processed, so the students' points appear independently, that is, they have not been added
-    """
-        fileQuiz = os.listdir()
+            the returned data is not processed, so the students' points appear independently, that is, they have not been added
+        """
+        files_quiz = os.listdir()
 
-        files = [file for file in fileQuiz if file.endswith("csv")]
+        files = [file for file in files_quiz if file.endswith("csv")]
 
         try:
             self.length_file = len(files)
@@ -51,22 +51,21 @@ class File():
 
     def process_data_file(self):
         """
-    The process_data_file function receives the data of the students, full name,
-    score and accuracy.
-    Split the data
+            The process_data_file function receives the data of the students, full name,
+            score and accuracy.
+            Split the data
 
-    >>> returns the total points accumulated by each student.
+            >>> returns the total points accumulated by each student.
 
-    >>> return [{'name':'xxx', 'score':xxx, 'acuracy':xxx},....]
+            >>> return [{'name':'xxx', 'score':xxx, 'acuracy':xxx},....]
+        """
 
-
-    """
-        dataStudents = self.open_files()
+        data_studens = self.open_files()
         data_result = []
         result_score = {}
         result_acuracy = {}
 
-        for i in dataStudents:
+        for i in data_studens:
             completed_name = i["firstName"] + " " + i["lastName"]
 
             if completed_name in result_score.keys():
@@ -103,22 +102,22 @@ class File():
 
     def add_points_to_students(self, data_result: list, extra_student_points: list):
         """
-    The add_points_to_students function receives the list of extra students.
-    Dictionary:
-    yam
-    score
-    The score is added, if the names are the same
+            The add_points_to_students function receives the list of extra students.
+            Dictionary:
+            yam
+            score
+            The score is added, if the names are the same
 
-    >>> sum(student['score'] + extra-point['score'])
-    >>> the results are sorted with the sort method
+            >>> sum(student['score'] + extra-point['score'])
+            >>> the results are sorted with the sort method
 
-    >>> received
-    data_result = [{'name':'xxx', 'score':xxx, 'acuracy':xxx},....]
-    extra_student_points = [{'name': 'xxx', 'score': xxx}, ....]
+            >>> received
+            data_result = [{'name':'xxx', 'score':xxx, 'acuracy':xxx},....]
+            extra_student_points = [{'name': 'xxx', 'score': xxx}, ....]
 
-    >>> return
-    data_result = [{'name':'xxx', 'score':xxx, 'acuracy':xxx},....] ordened 
-    """
+            >>> return
+            data_result = [{'name':'xxx', 'score':xxx, 'acuracy':xxx},....] ordened 
+        """
         for student in data_result:
             for extra_point in extra_student_points:
                 if student['name'] == extra_point['name']:
