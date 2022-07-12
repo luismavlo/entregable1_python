@@ -4,10 +4,10 @@ from student import Student
 file = File()
 
 
-dataStundent = file.process_data_file()
+data_stundent = file.process_data_file()
 
 
-student = Student(dataStundent)
+student = Student(data_stundent)
 
 print(student.find_winners(2))
 print(student.find_users_by_percent(70))
